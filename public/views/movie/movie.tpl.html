@@ -1,22 +1,19 @@
-<div class="container">
+<div class="container" style="margin-top: 15px">
     <div class="row">
-        <div class="col-sm-9">
+        <div class="col-sm-11">
             <input type="text" class="form-control" placeholder="Search Movie/Actor/TV Show">
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-1">
             <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button>
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-7">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at velit vel elit dignissim fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur et mi ac sapien molestie convallis sed a lectus. Aliquam quis leo non lectus consequat vulputate sit amet sed leo. Cras pharetra facilisis posuere. Maecenas et dolor vel arcu mollis congue. Morbi condimentum mi sed enim sodales auctor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc dapibus suscipit augue venenatis bibendum. Vivamus posuere blandit libero at posuere.
-
-            Maecenas dapibus tristique pellentesque. In sit amet pharetra justo. Aenean vehicula porta metus, in venenatis lectus accumsan quis. Vivamus a ligula eu ligula elementum ultricies. Maecenas scelerisque ornare hendrerit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris dictum lorem risus, eu viverra mauris fermentum vel. Etiam consectetur egestas velit, a dapibus risus luctus aliquam. Vestibulum sit amet odio dui. Maecenas vitae pulvinar nisi, a gravida est.
-
-            Nunc maximus justo at purus cursus, id pharetra odio rhoncus. Phasellus commodo turpis vitae odio eleifend, ac finibus erat commodo. Ut vitae rutrum ex. Mauris varius mi libero, eu laoreet felis mattis sed. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed aliquam sit amet nulla vel faucibus. Donec eu arcu efficitur, porta velit a, tempor risus. Phasellus vitae massa sed felis ullamcorper consequat sed sit amet tellus. Aenean viverra suscipit libero vitae placerat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur nec libero nec nisl tincidunt accumsan nec in velit. Integer sit amet rhoncus lorem. Fusce semper dapibus odio non venenatis.
+        <div class="col-sm-8" style="margin-top: 5px">
+            Title: {{movie.theMovieDb.movies.original_title}}
+           
         </div>
-        <div class="col-sm-5">
-            <img src="Big-Hero-6-movie-poster.jpg" class="img-responsive" style="height: 450px" />
+        <div class="col-sm-4">
+            <img src="{{movie.poster_path}}" class="img-responsive" style="height: 450px" />
         </div>
     </div>
 </div>
