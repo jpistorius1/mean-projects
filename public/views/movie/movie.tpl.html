@@ -4,16 +4,86 @@
             <input type="text" class="form-control" placeholder="Search Movie/Actor/TV Show">
         </div>
         <div class="col-sm-1">
-            <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button>
+            <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-8" style="margin-top: 5px">
-            Title: {{movie.theMovieDb.movies.original_title}}
-           
+            <strong>Title:</strong> {{movie.original_title}}
         </div>
         <div class="col-sm-4">
-            <img src="{{movie.poster_path}}" class="img-responsive" style="height: 450px" />
+<!--            <img ng-src="{{}}" class="img-responsive" style="height: 450px" />-->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <strong>Release date:</strong> {{movie.release_date}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <strong>Runtime:</strong> {{movie.runtime}} minutes
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <strong>Original Language:</strong> {{movie.original_language}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <strong>Popularity:</strong> {{movie.vote_average}}<strong>/10</strong> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <strong>Budget:</strong> ${{movie.budget}}
+        </div>  
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+           <strong> Revenue:</strong> ${{movie.revenue}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <strong>Tagline:</strong> "{{movie.tagline}}"
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <strong>Movie sypnosis:</strong> "{{movie.overview}}"
+        </div>
+    </div>
+            
+ 
+<!--adult: false
+backdrop_path: "/8uO0gUM8aNqYLs1OsTBQiXu0fEv.jpg"
+belongs_to_collection: null
+budget: 63000000
+genres: Array[1]
+homepage: ""
+id: 550
+imdb_id: "tt0137523"
+original_language: "en"
+original_title: "Fight Club"
+overview: "A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground "fight clubs" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion."
+popularity: 3.134
+poster_path: "/811DjJTon9gD6hZ8nCjSitaIXFQ.jpg"production_companies: Array[6]production_countries: Array[2]
+release_date: "1999-10-14"
+revenue: 100853753
+runtime: 139
+spoken_languages: Array[1]
+status: "Released"
+tagline: "How much can you know about yourself if you've never been in a fight?"
+title: "Fight Club"
+video: false
+vote_average: 7.8
+vote_count: 3526-->
+           
+        </div>
+       
+            <!-- example of a movie image: http://image.tmdb.org/t/p/original/811DjJTon9gD6hZ8nCjSitaIXFQ.jpg-->
         </div>
     </div>
 </div>

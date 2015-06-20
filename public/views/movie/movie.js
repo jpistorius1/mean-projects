@@ -11,10 +11,11 @@ app.config(function($routeProvider){
 app.controller('movie', function($scope, $http){
     var API_BASE_URL = 'https://api.themoviedb.org/';
     var API_KEY = 'cec2b81b22b80f0a38ca51d2c39ef48b';
-	$scope.movie = API_BASE_URL + '/3/movie/550?api_key=' + API_KEY;
+	//$scope.movie = API_BASE_URL + '/3/movie/550?api_key=' + API_KEY;
     $http.get(API_BASE_URL + '/3/movie/550?api_key=' + API_KEY)
     .success(function(data){
-       console.log(data);
+        $scope.movie = data
+        console.log(data);
     })
     .error(function(err){
         console.log(err);
