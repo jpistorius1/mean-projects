@@ -8,51 +8,56 @@
         </div>
     </div>
     <div class="row">
+        
         <div class="col-sm-8" style="margin-top: 5px">
-            <strong>Title:</strong> {{movie.original_title}}
+            <div class="row">
+                <div class="col-sm-12">
+                    <strong>Title:</strong> {{movie.original_title}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <strong>Release date:</strong> {{movie.release_date}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <strong>Runtime:</strong> {{movie.runtime}} minutes
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <strong>Original Language:</strong> {{movie.original_language}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <strong>Popularity:</strong> {{movie.vote_average}}<strong>/10</strong> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <strong>Budget:</strong> {{movie.budget | currency }}
+                </div>  
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                   <strong> Revenue:</strong> {{movie.revenue | currency }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <strong>Tagline:</strong> "{{movie.tagline}}"
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <strong>Movie sypnosis:</strong> "{{movie.overview}}"
+                </div>
+            </div>
         </div>
         <div class="col-sm-4">
-<!--            <img ng-src="{{}}" class="img-responsive" style="height: 450px" />-->
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-8">
-            <strong>Release date:</strong> {{movie.release_date}}
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-8">
-            <strong>Runtime:</strong> {{movie.runtime}} minutes
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-8">
-            <strong>Original Language:</strong> {{movie.original_language}}
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-8">
-            <strong>Popularity:</strong> {{movie.vote_average}}<strong>/10</strong> 
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-8">
-            <strong>Budget:</strong> ${{movie.budget}}
-        </div>  
-    </div>
-    <div class="row">
-        <div class="col-sm-8">
-           <strong> Revenue:</strong> ${{movie.revenue}}
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-8">
-            <strong>Tagline:</strong> "{{movie.tagline}}"
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-8">
-            <strong>Movie sypnosis:</strong> "{{movie.overview}}"
+            <img ng-src="{{poster}}" class="img-responsive" style="height: 550px" />
         </div>
     </div>
             
