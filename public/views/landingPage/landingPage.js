@@ -11,3 +11,5 @@ app.config(function($routeProvider){
 app.controller('landingPage', function(){
 	
 })
+
+//search page instead? 

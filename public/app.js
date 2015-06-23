@@ -6,6 +6,6 @@ app.config(function($routeProvider) {
 			controller: 'landingPage',
 			templateUrl: 'views/landingPage/landingPage.tpl.html'
 		})
-		.otherwise('/welcome')
+		.otherwise('/home')
 
 }) 
