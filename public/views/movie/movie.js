@@ -15,7 +15,7 @@ app.controller('movie', function($scope, $http){
     var API_IMG_SIZE = "/original"; 
     
 	//$scope.movie = API_BASE_URL + '/3/movie/550?api_key=' + API_KEY;
-    $http.get(API_BASE_URL + '/tv/810' + API_KEY)
+    $http.get(API_BASE_URL + '/movie/287' + API_KEY)
     .success(function(data){
         $scope.movie = data
         $scope.poster = API_BASE_IMAGE + API_IMG_SIZE + data.poster_path;

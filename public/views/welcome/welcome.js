@@ -18,9 +18,15 @@ app.controller('welcome', function($scope, $http){
     	
     $http.get(API_BASE_URL + UPCOMING + API_KEY + RELEASES)
     .success(function(data){
-        var randomMovie = Math.floor(Math.random() * 20);
-        var randomMovie2 = Math.floor(Math.random() * 20);
-        var randomMovie3 = Math.floor(Math.random() * 20);
+        var randomMovie = Math.floor(Math.random() * data.results.length);
+        var randomMovie2 = Math.floor(Math.random() * data.results.length);
+            if(randomMovie2 == randomMovie){
+                Math.floor(Math.random() * data.results.length);
+            };
+        var randomMovie3 = Math.floor(Math.random() * data.results.length);
+            if(randomMovie3 == randomMovie2 || randomMovie){
+                    Math.floor(Math.random() * data.results.length);
+            };
         var posterUrl = data.results[randomMovie].poster_path;
         $scope.posterResult = API_BASE_IMAGE+ API_IMG_SIZE +posterUrl;
         var posterUrl2 = data.results[randomMovie2].poster_path;
@@ -32,4 +38,3 @@ app.controller('welcome', function($scope, $http){
         console.log(err);
     });
 })
-//show upcoming movies
