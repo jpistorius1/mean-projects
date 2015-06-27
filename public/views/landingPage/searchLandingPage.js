@@ -1,11 +1,11 @@
 var app = angular.module('movieSite.searchLandingPage', ['ngRoute']);
 
 app.config(function($routeProvider){
-	$routeProvider
-		.when('/searchresults', {
-			controller: "searchResults",
-			templateUrl: "views/landingPage/searchLandingPage.tpl.html"
-		})
+    $routeProvider
+        .when('/searchresults', {
+            controller: "searchResults",
+            templateUrl: "views/landingPage/searchLandingPage.tpl.html"
+        })
 })
 
 app.controller('searchResults', function($http, $scope, dataService){
@@ -21,14 +21,11 @@ app.controller('searchResults', function($http, $scope, dataService){
 
     
     $http.get(url).success(function(data) {
-       console.log(data); 
-    });
-    
-//	$scope.searchButton = function() {
-//        
-//        $http.get('http://api.themoviedb.org/3/search/multi?query=brad+pitt&api_key=cec2b81b22b80f0a38ca51d2c39ef48b&include_adult=false') 
-//    }
-})
+        console.log(data); 
+        this.type = data.results[0].media_type;
+        this.searchID = data.results[0].id;
+        $scope.getSelection = url;
+        $scope.result = data;
 
-//search functionality - ng-if http://api.themoviedb.org/3/search/multi?query=brad+pitt&api_key=cec2b81b22b80f0a38ca51d2c39ef48b&include_adult=false
-//.replace(regex)
+    });
+})

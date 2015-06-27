@@ -1,11 +1,11 @@
 var app = angular.module('movieSite', ['ngRoute', 'movieSite.searchLandingPage', 'movieSite.welcome', 'movieSite.movie', 'movieSite.about']);
 
 app.config(function($routeProvider) {
-	$routeProvider
-		.when('/', {
+    $routeProvider
+        .when('/', {
         redirectTo: '/home'   
         })
-		.otherwise('/home')
+        .otherwise('/home')
 
 });
 

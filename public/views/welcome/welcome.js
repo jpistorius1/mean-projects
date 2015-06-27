@@ -1,11 +1,11 @@
 var app = angular.module('movieSite.welcome', ['ngRoute']);
 
 app.config(function($routeProvider){
-	$routeProvider
-		.when('/home', {
-			controller: "welcome",
-			templateUrl: "views/welcome/welcome.tpl.html"
-		})
+    $routeProvider
+        .when('/home', {
+            controller: "welcome",
+            templateUrl: "views/welcome/welcome.tpl.html"
+        })
 })
 
 app.controller('welcome', function($scope, $http){
@@ -15,7 +15,7 @@ app.controller('welcome', function($scope, $http){
     var RELEASES = '&append_to_response=releases';
     var API_BASE_IMAGE = "http://image.tmdb.org/t/p";
     var API_IMG_SIZE = "/original"; 
-    	
+        
     $http.get(API_BASE_URL + UPCOMING + API_KEY + RELEASES)
     .success(function(data){
         var randomMovie = Math.floor(Math.random() * data.results.length);
