@@ -14,11 +14,10 @@ app.controller('movie', function($scope, $http, searchLandingPage){
     var API_BASE_IMAGE = "http://image.tmdb.org/t/p";
     var API_IMG_SIZE = "/original"; 
     
-    //$scope.movie = API_BASE_URL + '/3/movie/550?api_key=' + API_KEY;
     $http.get(API_BASE_URL + '/' + searchLandingPage.type + searchLandingPage.searchID + API_KEY)
     .success(function(data){
         $scope.movie = data
-        $scope.poster = API_BASE_IMAGE + API_IMG_SIZE + data.poster_path;
+        //$scope.poster = API_BASE_IMAGE + API_IMG_SIZE + data.poster_path;
         console.log(data);
     })
     .error(function(err){
