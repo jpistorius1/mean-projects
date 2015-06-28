@@ -3,19 +3,25 @@ var app = angular.module('movieSite', ['ngRoute', 'movieSite.searchLandingPage',
 app.config(function($routeProvider) {
     $routeProvider
         .when('/', {
-        redirectTo: '/home'   
+            redirectTo: '/home'   
         })
         .otherwise('/home')
-
 });
 
-app.controller('movieCtrl', function($location, $scope, dataService) {
+app.controller('movieCtrl', function($location, $scope, $route, dataService) {
     $scope.searchStr = "";
     
     $scope.searchBtnClicked = function() {
-        console.log("WE GOT HERE");
+        
         dataService.searchStr = $scope.searchStr;
-        $location.path('/searchresults');  
+        
+        if($location.path() === '/searchresults'){
+            
+            $route.reload();
+        } else {
+            $location.path('/searchresults');  
+        }
+    
     };
     
 });

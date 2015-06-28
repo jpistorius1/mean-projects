@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="icon" href="/img/movie.png2ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/movie.png2ico" type="image/x-icon">
     <title>Movie Lookup</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 </head>
-<body ng-app="movieSite" ng-controller="movieCtrl">
+<body ng-app="movieSite">
     
 <div class="container" style="margin-top: 55px;">
-     <div class="row" style="background-color: #000080">
+     <div class="row" style="background-color: #81bef7">
         <div class="col-sm-12 text-center">
-            <h1>Movie Slim</h1>
+            <h1 class="text-primary">Movie Slim</h1>
         </div>
     </div>
-    <div class="row" style="background-color: #000080">
+    <div class="row" style="background-color: #eee">
         <div class="col-sm-6" style="text-align: center">
             <a href="/#/home"><font color="#806900">Home</font></a>
         </div>
@@ -22,14 +24,16 @@
     </div>
     <div class="row bg-caution">
         <div class="col-sm-12" style="text-align: center">
-          All the movie information, none of the fluff.
+          Movie information, with none of the fluff.
         </div>
     </div>
-    <div class="col-sm-11">
+    <div class="row" ng-controller="movieCtrl">
+        <div class="col-sm-11">
             <input type="text" class="form-control" ng-model="searchStr" placeholder="Search Movie/Actor/TV Show">
-    </div>
-    <div class="col-sm-1">
+        </div>
+        <div class="col-sm-1">
             <button type="submit" class="btn btn-primary" ng-click="searchBtnClicked()"><span class="glyphicon glyphicon-eye-open" aria-hidden="true" ></span></button>
+        </div>
     </div>
 </div>
 

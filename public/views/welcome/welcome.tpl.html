@@ -1,13 +1,13 @@
 <div class="container">
     <div class="row" style="margin-top: 45px">
-        <div class="col-sm-4">
-            <img ng-src='{{posterResult}}' class="img-responsive"/>
+        <div class="col-sm-4" ng-click="upcomingMovieClicked(movie0)" style="cursor: pointer;">
+            <img ng-src='{{posterResult0}}' class="img-responsive"/>
         </div>
-        <div class="col-sm-4">
-            <img ng-src='{{posterResult2}}' class="img-responsive"/>
+        <div class="col-sm-4" ng-click="upcomingMovieClicked(movie1)" style="cursor: pointer;">
+            <img ng-src='{{posterResult1}}' class="img-responsive"/>
         </div>                 
-        <div class="col-sm-4">
-            <img ng-src='{{posterResult3}}' class="img-responsive"/>
+        <div class="col-sm-4" ng-click="upcomingMovieClicked(movie2)" style="cursor: pointer;">
+            <img ng-src='{{posterResult2}}' class="img-responsive"/>
         </div>
     </div>
 </div>
