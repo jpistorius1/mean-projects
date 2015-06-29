@@ -24,9 +24,6 @@ app.controller('searchResults', function($http, $scope, $location, dataService, 
             console.log(data); 
             $scope.getSelection = url;
             $scope.result = data;
-            //$scope.posterURL = API_BASE_IMAGE + API_IMG_SIZE;
-
-            //$scope.posterResult0 = API_BASE_IMAGE + API_IMG_SIZE + posterUrl0;
     });
     
     $scope.searchResultRowClicked = function(searchResult){
@@ -38,7 +35,6 @@ app.controller('searchResults', function($http, $scope, $location, dataService, 
 });
 
 app.service('resultSelectedService', function(){
-//    this.resultType = data.results[0].media_type;
-//    this.resultID = data.results[0].id;
+
     this.clickedResult = {};
 });

@@ -43,19 +43,19 @@ app.controller('welcome', function($scope, $http, $location, resultSelectedServi
         var posterUrl2 = data.results[randomMovie2].poster_path;
         
         if (posterUrl0 === null){
-            $scope.posterResult0 = '/img/vhs1.jpg';
+            $scope.posterResult0 = '/img/vhs2.jpg';
         } else {
             $scope.posterResult0 = API_BASE_IMAGE+ API_IMG_SIZE + posterUrl0;
         }
         
         if (posterUrl1 === null){
-            $scope.posterResult1 = '/img/vhs1.jpg';
+            $scope.posterResult1 = '/img/vhs2.jpg';
         } else {
             $scope.posterResult1 = API_BASE_IMAGE+ API_IMG_SIZE + posterUrl1;
         }
         
         if (posterUrl2 === null) {
-            $scope.posterResult2 = '/img/vhs1.jpg';
+            $scope.posterResult2 = '/img/vhs2.jpg';
         } else {
             $scope.posterResult2 = API_BASE_IMAGE+ API_IMG_SIZE + posterUrl2;
         }
