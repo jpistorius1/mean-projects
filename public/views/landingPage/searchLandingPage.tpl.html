@@ -37,7 +37,9 @@
                                 </div>
                             </div>
                             <div class="col-sm-3">
-                               <img ng-src="{{API_BASE_IMAGE}}{{API_IMG_SIZE}}{{thisResult.poster_path}}" class="img-responsive" style="max-height: 175px;">
+<!--                                <img ng-src="{{API_BASE_IMAGE}}{{API_IMG_SIZE}}{{thisResult.poster_path}}" class="img-responsive" style="max-height: 175px;">-->
+                                <div ng-if="thisResult.poster_path != '/img/vhs2.jpg'"><img ng-src="{{API_BASE_IMAGE}}{{API_IMG_SIZE}}{{thisResult.poster_path}}" class="img-responsive" style="max-height: 175px;"/></div>
+                                <div ng-if="thisResult.poster_path == '/img/vhs2.jpg'"><img ng-src="{{thisResult.poster_path}}" class="img-responsive" style="max-height: 175px;"/></div>
                             </div>
                         </div>
                     </div>

@@ -24,6 +24,11 @@ app.controller('searchResults', function($http, $scope, $location, dataService, 
             console.log(data); 
             $scope.getSelection = url;
             $scope.result = data;
+            for(var i = 0; i < data.results.length; i++){
+                if(data.results[i].poster_path === null){
+                    data.results[i].poster_path = '/img/vhs2.jpg';
+                }
+            }
     });
     
     $scope.searchResultRowClicked = function(searchResult){

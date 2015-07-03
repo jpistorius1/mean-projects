@@ -1,7 +1,7 @@
 <div class="container" style="margin-top: 15px">
     <div class="row">
-        <div class="col-sm-8" style="margin-top: 5px">
-            <div ng-if="movie.media_type == 'movie'">
+        <div ng-if="movie.media_type == 'movie'">
+            <div class="col-sm-8" style="margin-top: 5px">
                 <div class="row">
                     <div class="col-sm-12">
                         <strong>Title:</strong> {{movie.original_title}}
@@ -53,38 +53,37 @@
                     </div>
                 </div>
                 <!--<div ng-click="searchResultRowClicked(thisResult)" style="cursor: pointer;">-->
-                    <div class="row" ng-repeat="cast in castAndCrew.cast" style="margin-top 15px" >
-                        <div class="col-sm-7">
-                            <strong>Cast:</strong> {{cast.name}} ..............
-                        </div>
-                         <div class="col-sm-4">
-                            Playing: {{cast.character}}
-                        </div>
-                        <div class="col-sm-1">
-                             <img ng-src="{{imageOfPerson}}{{cast.profile_path}}" style="height:75px" />
-                        </div>
+                <div class="row" ng-repeat="cast in castAndCrew.cast" style="margin-top 15px" >
+                    <div class="col-sm-7">
+                        <strong>Cast:</strong> {{cast.name}}
                     </div>
-                <!--</div>-->
-                   <div class="row" ng-repeat="crew in castAndCrew.crew" style="margin-top 15px" >
-                        <div class="col-sm-7">
-                            <strong>Crew:</strong> {{crew.name}}
-                        </div>
-                         <div class="col-sm-4">
-                            {{crew.job}}
-                        </div>
-                        <div class="col-sm-1">
-                             <img ng-src="{{imageOfPerson}}{{crew.profile_path}}" style="height:75px" />
-                        </div>
+                     <div class="col-sm-4">
+                        Playing: {{cast.character}}
+                    </div>
+                    <div class="col-sm-1">
+                         <img ng-src="{{imageOfPerson}}{{cast.profile_path}}" style="height:75px" />
                     </div>
                 </div>
-                        
-        </div>
+                <!--</div>-->
+               <div class="row" ng-repeat="crew in castAndCrew.crew" style="margin-top 15px" >
+                    <div class="col-sm-7">
+                        <strong>Crew:</strong> {{crew.name}}
+                    </div>
+                     <div class="col-sm-4">
+                        {{crew.job}}
+                    </div>
+                    <div class="col-sm-1">
+                         <img ng-src="{{imageOfPerson}}{{crew.profile_path}}" style="height:75px" />
+                    </div>
+                </div>
+            </div>
             <div class="col-sm-4">
                 <img ng-src="{{poster}}" class="img-responsive" style="height: 550px" />
-            </div>
+            </div>   
+        </div>
         
-        <div class="col-sm-8" style="margin-top: 5px">
-            <div ng-if="thisResult.media_type == 'tv'">
+        <div ng-if="movie.media_type == 'tv'">
+            <div class="col-sm-8" style="margin-top: 5px">
                 <div class="row">
                     <div class="col-sm-12">
                         <strong>Name:</strong> {{movie.name}}
@@ -111,44 +110,50 @@
                     </div>
                 </div>
             </div>
+            <div class="col-sm-4">
+                <img ng-src="{{poster}}" class="img-responsive" style="height: 550px" />
+            </div>  
         </div>
-        
-                             
-                    
 <!--                    $$hashKey: "object:19"backdrop_path: "/k9YyjHQFHETxcPjyT4nCJrDro3P.jpg"first_air_date: "1966-01-12"genre_ids: Array[3]id: 2287media_type: "tv"name: "Batman"origin_country: Array[1]original_language: "en"original_name: "Batman"overview: "Batman is a 1960s American live action television series, based on the DC comic book character of the same name. It stars Adam West as Batman and Burt Ward as Robin — two crime-fighting heroes who defend Gotham City. It aired on ABC for three seasons from January 12, 1966 to March 14, 1968. The show was aired twice weekly for its first two seasons, resulting in the production of a total of 120 episodes."popularity: 2.730473poster_path: "/3UWelGlodkRQeyheMrw6P52TC2A.jpg"vote_average: 8.2vote_count: 5-->
-        <div ng-if="thisResult.media_type == 'person'">
-            <div class="row">
-                <div class="col-sm-12">
-                    <strong>Name:</strong> {{movie.name}}
+        <div ng-if="movie.media_type == 'person'">
+            <div class="col-sm-8" style="margin-top: 5px">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <strong>Name:</strong> {{movie.name}}
+                    </div>
+                </div>
+                <div class="row" ng-repeat="known in movie.known_for">
+                    <div class="col-sm-12">
+                        <strong>Known For:</strong> {{known.original_title}}
+                    </div>
+                </div>
+                <div class="row" ng-repeat="credits in moviesTheyWereIn.cast" style="margin-top 15px" >
+                    <div class="col-sm-7">
+                        <strong>Cast:</strong> {{credits.original_title}}
+                    </div>
+                     <div class="col-sm-4">
+                        {{credits.character}}
+                    </div>
+                    <div class="col-sm-1">
+                        <div ng-if="credits.poster_path != '/img/vhs2.jpg'"><img ng-src="{{imageOfPerson}}{{credits.poster_path}}" style="height:75px" /></div>
+                        <div ng-if="credits.poster_path == '/img/vhs2.jpg'"><img ng-src="{{credits.poster_path}}" style="height:75px" /></div>
+                    </div>
+                </div>
+                <div class="row" ng-repeat="crewed in moviesTheyWereIn.crew" style="margin-top 15px" >
+                    <div class="col-sm-7">
+                        <strong>Crew:</strong> {{crewed.original_title}}
+                    </div>
+                     <div class="col-sm-4">
+                        {{crewed.job}}
+                    </div>
+                    <div class="col-sm-1">
+                        <img ng-src="{{imageOfPerson}}{{credits.poster_path}}" style="height:75px" />
+                    </div>
                 </div>
             </div>
-            <div class="row" ng-repeat="known in movie.known_for">
-                <div class="col-sm-12">
-                    <strong>Known For:</strong> {{known.original_title}}
-                </div>
-            </div>
-            <div class="row" ng-repeat="credits in moviesTheyWereIn.cast" style="margin-top 15px" >
-                <div class="col-sm-7">
-                    <strong>Cast:</strong> {{credits.original_title}}
-                </div>
-                 <div class="col-sm-4">
-                    {{credits.character}}
-                </div>
-                <div class="col-sm-1">
-                    <img ng-src="{{imageOfPerson}}{{credits.poster_path}}" style="height:75px" />
-                </div>
-            </div>
-            <div class="row" ng-repeat="crewed in moviesTheyWereIn.crew" style="margin-top 15px" >
-                <div class="col-sm-7">
-                    <strong>Crew:</strong> {{crewed.original_title}}
-                </div>
-                 <div class="col-sm-4">
-                    {{crewed.job}}
-                </div>
-                <div class="col-sm-1">
-                    <img ng-src="{{imageOfPerson}}{{credits.poster_path}}" style="height:75px" />
-                </div>
-            </div>
+            <div class="col-sm-4">
+                <img ng-src="{{profileImage}}" class="img-responsive" style="height: 550px" />
+            </div>  
         </div>
         <!-- adult: falsecredit_id: "52fe43ddc3a368484e0028fb"department: "Writing"id: 20211job: "Writer"original_title: "Robin Williams: Live on Broadway"poster_path: "/BHXaRTS2rLY0UaF0V377X6Fx0f.jpg"release_date: "2002-07-14"title: "Robin Williams: Live on Broadway" -->
     </div>

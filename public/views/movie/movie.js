@@ -24,17 +24,27 @@ app.controller('movie', function($scope, $http, resultSelectedService){
     $scope.movie = resultSelectedService.clickedResult;
     $scope.poster = API_BASE_IMAGE + API_IMG_SIZE + $scope.movie.poster_path;
     $scope.imageOfPerson = API_BASE_IMAGE + API_IMG_SIZE;
+    
+    
+    
+    $scope.profileImage = API_BASE_IMAGE + API_IMG_SIZE + $scope.movie.profile_path;
         
     $http.get(people)
     .success(function (data){
-    //console.log(data);
-    $scope.castAndCrew = data;
+        //console.log(data);
+        $scope.castAndCrew = data;
     })
     
     $http.get(movieCredits)
     .success(function (data){
-    $scope.moviesTheyWereIn = data; 
-    //console.log(data);
+        for(var i = 0; i < data.cast.length; i++){
+            if(data.cast[i].poster_path === null){
+                data.cast[i].poster_path = '/img/vhs2.jpg';
+            }
+        }
+        
+        $scope.moviesTheyWereIn = data; 
+        console.log(data);
     })
     
 })
